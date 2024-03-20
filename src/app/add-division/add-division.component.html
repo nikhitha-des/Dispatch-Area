@@ -1,0 +1,144 @@
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-md-8">
+        <!-- First and Second Column for the Form -->
+        <!-- <div class="col-md-8"> -->
+          <p><b>Add Division</b></p>
+          <form>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="dispatch-area" class="form-label">Dispatch Area Name</label>
+                        <select class="form-select" id="dispatchArea" name="dispatchArea">
+                          <!-- States will be populated dynamically using Angular -->
+                          <option value="" disabled selected hidden>Select Dispatch Area</option>
+                          <option *ngFor="let dispatchArea of dispatchAreas" [value]="dispatchArea">{{ dispatchArea }}</option>
+                        </select>
+                      </div>  
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="locationId" class="form-label">Location ID</label>
+                        <input lntds-text-box type="text" class="form-control" id="locationId" name="locationId" placeholder="Add Location ID">
+                      </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="addressLine1" class="form-label">Address Line 1</label>
+                        <input lntds-text-box type="text" class="form-control" id="addressLine1" name="addressLine1" placeholder="Add Address">
+                      </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="priority" class="form-label">Priority</label>
+                        <select class="form-select" id="priority" name="priority">
+                          <!-- Add options for priority here -->
+                          <option value="" disabled selected hidden>Select Priority</option>
+                          <option value="high">High</option>
+                          <option value="medium">Medium</option>
+                          <option value="low">Low</option>
+                        </select>
+                      </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="addressLine2" class="form-label">Address Line 2</label>
+                        <input lntds-text-box type="text" class="form-control" id="addressLine2" name="addressLine2" placeholder="Add Address">
+                      </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="addLocationFile" class="form-label">Add Location File</label>
+                        <div class="input-group">
+                          <label for="mlGeoJSONFile" style="margin-top: 10px;margin-left: 5px;">Add ML/Geo JSON File</label>
+                          <input type="text" id="mlGeoJSONFile" name="mlGeoJSONFile" placeholder=" Add URL " style="margin-left : 10px;margin-top: 5px; margin-bottom:5px; border: 1px solid #C1BDBD; background : #FFF;">
+                          <input type="file" class="form-control" id="browseFile" name="browseFile" style="display: none;">
+                          <div class="input-group-append">
+                            <button class="btn btn-light" type="button" onclick="document.getElementById('browseFile').click()">Browse</button>
+                          </div>
+                        </div>
+                      </div>
+                      
+                                            
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="pincode" class="form-label">Pincode</label>
+                        <input lntds-text-box type="text" class="form-control" id="pincode" name="pincode" placeholder="Add Pincode">
+                      </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="latitude" class="form-label">Latitude</label>
+                        <input lntds-text-box type="text" class="form-control" id="latitude" name="latitude" placeholder="Add Latitude">
+                      </div>
+                </div>
+            </div>  
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="city" class="form-label">City</label>
+                        <input lntds-text-box type="text" class="form-control" id="city" name="city" placeholder="Add City">
+                      </div>  
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="longitude" class="form-label">Longitude</label>
+                        <input lntds-text-box type="text" class="form-control" id="longitude" name="longitude" placeholder="Add Longitude">
+                      </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+            <div class="mb-3">
+              <label for="state" class="form-label">State</label>
+              <select class="form-select" id="state" name="state">
+                <!-- States will be populated dynamically using Angular -->
+                <option value="" disabled selected hidden>Select State</option>
+                <option *ngFor="let state of states" [value]="state">{{ state }}</option>
+              </select>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="mb-3">
+              <label for="country" class="form-label">Country</label>
+              <select class="form-select" id="country" name="country" (change)="onCountryChange()">
+                <!-- Countries will be populated dynamically using Angular -->
+                <option value="" disabled selected hidden>Select Country</option>
+                <option *ngFor="let country of countries" [value]="country">{{ country }}</option>
+              </select>
+            </div>
+        </div>
+
+          <div class="col-mod-8 text-center justify-content-center"  style="display: flex; gap: 10px; margin-top:24px; margin-bottom: 20px; float: right">      
+              <button lntdsButton
+              [color]="ButtonColor.SECONDARY"
+              [size]="ButtonSize.SMALL"
+              [style]="ButtonStyle.SOLID"
+              [shape]="ButtonShape.ROUNDED"
+              type="button" (onClick)="cancel()">Cancel</button>                
+              <button lntdsButton
+              [color]="ButtonColor.PRIMARY"
+              [size]="ButtonSize.SMALL"
+              [style]="ButtonStyle.SOLID"
+              [shape]="ButtonShape.ROUNDED"
+              type="button" (onClick)="save()">Save</button>
+          </div>
+        </form>
+        </div>
+      
+      <div class="col-md-4">
+
+        <!-- Third Column for the Image -->
+        <div class="col-md-12">
+        <div style="background-color: aqua; height: 41px;"></div>
+          <img src="https://via.placeholder.com/1200x800" style="height: 900px;" alt="Image Placeholder" class="img-fluid">
+        </div>
+      </div>
+    </div>
+  </div>
