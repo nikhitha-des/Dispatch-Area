@@ -69,9 +69,9 @@ public state: IdropDownItem[] = [
 ];
 
 rowData: IRow[] = [
-  { AreaName: "Area1", ID: "#6466", DivisionName: "Division1,Division2", Priority: "High", Location: "Old Palasia",Address :"534, Street 5, west", City: "Indore", State : "Madhya Pradesh", Country: "India", Pincode: 452001, Action:"jedfnhe"},
-  { AreaName: "Area1", ID: "#6467", DivisionName: "Division1", Priority: "High", Location: "Old Palasia",Address :"534, Street 5, west", City: "Indore", State : "Madhya Pradesh", Country: "India", Pincode: 452001, Action:"jedfnhe"},
-  { AreaName: "Area1", ID: "#6468", DivisionName: "Division1", Priority: "High", Location: "Old Palasia",Address :"534, Street 5, west", City: "Indore", State : "Madhya Pradesh", Country: "India", Pincode: 452001, Action:"jedfnhe"},
+  { AreaName: "Area1", ID: "#6466", DivisionName: "Division1,Division2", Priority: "High", Location: "Old Palasia",Address :"534, Street 5, west", City: "Indore", State : "Madhya Pradesh", Country: "India", Pincode: 452001, Action:""},
+  { AreaName: "Area1", ID: "#6467", DivisionName: "Division1", Priority: "High", Location: "Old Palasia",Address :"534, Street 5, west", City: "Indore", State : "Madhya Pradesh", Country: "India", Pincode: 452001, Action:""},
+  { AreaName: "Area1", ID: "#6468", DivisionName: "Division1", Priority: "High", Location: "Old Palasia",Address :"534, Street 5, west", City: "Indore", State : "Madhya Pradesh", Country: "India", Pincode: 452001, Action:""},
   
  
 ];
